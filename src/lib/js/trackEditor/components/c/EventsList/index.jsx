@@ -1,11 +1,18 @@
 import React, { PureComponent } from 'react'
 
-import Style from './styles'
+import Style, { EventType } from './styles'
 
 class EventsList extends PureComponent {
 	render() {
+
+		const { eventTypes } = this.props
+
 		return (
-			<Style />
+			<Style>
+				{ eventTypes.map(eventType => {
+					return <EventType>{eventType.type}</EventType>
+				})}
+			</Style>
 		)
 	}
 }

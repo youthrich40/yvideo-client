@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 
-import { Scrubber } from 'react-scrubber'
+// import { Scrubber } from 'react-scrubber'
 // import { Scrubber } from 'components/bits'
 
 import Style from './styles'
@@ -28,14 +28,14 @@ class TimeBar extends PureComponent {
 				<p style={styles}>Hey</p> */}
 				{/* //https://github.com/nick-michael/react-scrubber */}
 				<div className='scrubber-container' style={{ height:  `20px` }}>
-					<Scrubber
+					{/* <Scrubber
 						min={0}
 						max={100}
 						value={value}
 						// onScrubStart={this.handleScrubStart}
 						// onScrubEnd={this.handleScrubEnd}
 						onScrubChange={handleScrubChange}
-					/>
+					/>*/}
 				</div>
 			</Style>
 		)
