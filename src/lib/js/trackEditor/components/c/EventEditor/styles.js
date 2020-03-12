@@ -34,7 +34,6 @@ const EventsTitle = styled.div`
 	font-size: 16px;
 	font-weight: bold;
 
-	width: 100%;
 	line-height: 50px;
 	padding: 0 20px;
 `
