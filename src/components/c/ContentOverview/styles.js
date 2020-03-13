@@ -150,3 +150,12 @@ export const RemoveButton = styled.button`
 	cursor: pointer;
 	outline: none;
 `
+
+export const LinkStyled = styled(Link)`
+	background: transparent;
+	border: none;
+	color: #0582CA;
+	outline: none;
+	height: fit-content;
+	cursor: pointer;
+`

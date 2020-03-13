@@ -20,6 +20,7 @@ class TrackEditor extends PureComponent {
 		} = this.props.viewstate
 
 		const {
+			handleTextChange,
 			toggleEventsTab,
 			togglePlay,
 			toggleSaveTab,
@@ -46,6 +47,7 @@ class TrackEditor extends PureComponent {
 		}
 
 		const eventEditorHandlers = {
+			handleTextChange,
 			toggleEventsTab,
 			toggleSaveTab,
 			saveTracks,

@@ -24,6 +24,19 @@ const TrackEditorContainer = () => {
 		},
 	]
 
+	const testEvent = {
+		type: `Skip`,
+		start: 1567.123,
+		end: 1777.345,
+		id: `TrackEvent0`,
+		target: `target-2`,
+		text: ``,
+	}
+
+	const handleTextChange = () => {
+		// do nothing
+	}
+
 	const saveTracks = () => {
 		// do nothing yet
 	}
@@ -45,7 +58,7 @@ const TrackEditorContainer = () => {
 	const viewstate = {
 		contentId: params.id,
 		content: null,
-		event,
+		event: testEvent,
 		eventTypes,
 		playing,
 		saveTabActive,
@@ -53,6 +66,7 @@ const TrackEditorContainer = () => {
 	}
 
 	const handlers = {
+		handleTextChange,
 		togglePlay,
 		toggleEventsTab,
 		toggleSaveTab,

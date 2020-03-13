@@ -12,6 +12,7 @@ import { LazyImage } from 'components/bits'
 import Style, {
 	EditButton,
 	Icon,
+	LinkStyled,
 	Preview,
 	PublishButton,
 	RemoveButton,

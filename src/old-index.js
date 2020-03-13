@@ -1,3 +1,5 @@
+// remove 'old-' from the name of the file to use this index.js file
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
@@ -5,7 +7,7 @@ import * as serviceWorker from './serviceWorker'
 
 import { BrowserRouter as Router } from 'react-router-dom'
 
-ReactDOM.render(<Router><App /></Router>, document.getElementById('root'))
+ReactDOM.render(<Router><App /></Router>, document.getElementById(`root`))
 
 // If you want your app to work offline and load faster, you can change
 // Unregister() to register() below. Note this comes with some pitfalls.
