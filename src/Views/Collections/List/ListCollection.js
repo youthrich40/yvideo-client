@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import ListItem from './ListItem'
 
-import carrot from './../../../Assets/Collections/carrot.svg'
+import carrot from './../../../assets/Collections/carrot.svg'
 
 const Header = styled.div`
 	display: grid;
@@ -22,7 +22,7 @@ const Header = styled.div`
 		height: 1.5rem;
 		width: 1.5rem;
 
-		transform: ${props => props.isOpen ? 'rotate(-180deg)' : 'rotate(0deg)'};
+		transform: ${props => props.isOpen ? `rotate(-180deg)` : `rotate(0deg)`};
 		transition: transform .25s ease-in-out;
 	}
 
@@ -45,7 +45,7 @@ const Header = styled.div`
 
 	Body = styled.div`
 
-		height: ${props => props.isOpen ? (parseInt(props.count) * 6.5 + 2).toString() + 'rem' : '0'};
+		height: ${props => props.isOpen ? `${(parseInt(props.count) * 6.5 + 2).toString()}rem` : `0`};
 		transition: height .25s ease-in-out;
 
 		overflow: hidden;
@@ -56,14 +56,14 @@ export default class ListCollection extends Component {
 		super(props)
 
 		this.state = {
-			isOpen: false
+			isOpen: false,
 		}
 
 		this.togglePanel = this.togglePanel.bind(this)
 	}
 
 	togglePanel() {
-		console.log('boop')
+		console.log(`boop`)
 		this.setState({ isOpen: !this.state.isOpen })
 	}
 
@@ -89,38 +89,38 @@ export default class ListCollection extends Component {
 const _VideoPreview = [
 	{
 		'contentId': 1,
-		'name': 'Emilie Muller',
-		'thumbnail': '',
-		'collection': 'German Public Content',
+		'name': `Emilie Muller`,
+		'thumbnail': ``,
+		'collection': `German Public Content`,
 		'translation': true,
 		'captions': true,
-		'annotations': true
+		'annotations': true,
 	},
 	{
 		'contentId': 2,
-		'name': 'The Longest Yeah Boy Ever',
-		'thumbnail': '',
-		'collection': 'Collection 117',
+		'name': `The Longest Yeah Boy Ever`,
+		'thumbnail': ``,
+		'collection': `Collection 117`,
 		'translation': false,
 		'captions': true,
-		'annotations': true
+		'annotations': true,
 	},
 	{
 		'contentId': 3,
-		'name': 'Detroit',
-		'thumbnail': '',
-		'collection': 'Collection 117',
+		'name': `Detroit`,
+		'thumbnail': ``,
+		'collection': `Collection 117`,
 		'translation': true,
 		'captions': false,
-		'annotations': false
+		'annotations': false,
 	},
 	{
 		'contentId': 4,
-		'name': 'Les Choristes',
-		'thumbnail': '',
-		'collection': 'French Class',
+		'name': `Les Choristes`,
+		'thumbnail': ``,
+		'collection': `French Class`,
 		'translation': false,
 		'captions': false,
-		'annotations': false
-	}
+		'annotations': false,
+	},
 ]

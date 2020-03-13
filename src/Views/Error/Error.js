@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { Link } from 'react-router-dom'
 
-import Background from './../../Assets/desertbackground.svg'
+import Background from './../../assets/desertbackground.svg'
 
 const Container = styled.div`
 	width: 100%;
@@ -50,7 +50,7 @@ const Container = styled.div`
 			<Container>
 				<h1>{props.error}</h1>
 				<h2>{props.message}</h2>
-				<SLink to={'/dashboard'}>Go back home</SLink>
+				<SLink to={`/dashboard`}>Go back home</SLink>
 			</Container>
 		)
 	}

@@ -3,9 +3,9 @@ import styled, { keyframes } from 'styled-components'
 
 import { Link } from 'react-router-dom'
 
-import translation from './../../../Assets/Collections/VideoOptions/translation.svg'
-import captions from './../../../Assets/Collections/VideoOptions/captions.svg'
-import annotations from './../../../Assets/Collections/VideoOptions/annotations.svg'
+import translation from './../../../assets/Collections/VideoOptions/translation.svg'
+import captions from './../../../assets/Collections/VideoOptions/captions.svg'
+import annotations from './../../../assets/Collections/VideoOptions/annotations.svg'
 
 const shimmer = keyframes`
 0% {
@@ -69,15 +69,15 @@ const shimmer = keyframes`
 
 		&.translation {
 			background: url(${translation}) center no-repeat;
-			display: ${props => props.checked === true ? 'block' : 'none'};
+			display: ${props => props.checked === true ? `block` : `none`};
 		}
 		&.captions {
 			background: url(${captions}) center no-repeat;
-			display: ${props => props.checked === true ? 'block' : 'none'};
+			display: ${props => props.checked === true ? `block` : `none`};
 		}
 		&.annotations {
 			background: url(${annotations}) center no-repeat;
-			display: ${props => props.checked === true ? 'block' : 'none'};
+			display: ${props => props.checked === true ? `block` : `none`};
 		}
 	`
 

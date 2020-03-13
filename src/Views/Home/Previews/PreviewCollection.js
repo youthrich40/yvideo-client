@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
-import PreviewIcon from './../../../Assets/icon.svg'
+import PreviewIcon from './../../../assets/icon.svg'
 
 const Container = styled.div`
 		display: flex;
@@ -11,7 +11,7 @@ const Container = styled.div`
 			margin-top: 1rem;
 			margin-bottom: 0;
 		}
-		
+
 		& p.gray {
 			color: #a4a4a4;
 		}
@@ -32,7 +32,7 @@ const Container = styled.div`
 	`,
 
 	Wrapper = styled.div`
-		background-image: url(${ props => props.thumb});
+		background-image: url(${props => props.thumb});
 		background-size: cover;
 		background-position: center;
 		height: 10rem;

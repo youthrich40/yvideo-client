@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 
 import Overlay from './Overlay'
 
-import LComets from './../../Assets/Landing/CometsLeft.svg'
-import RComets from './../../Assets/Landing/CometsRight.svg'
-import HexLogo from './../../Assets/HexLogo2.svg'
+import LComets from './../../assets/Landing/CometsLeft.svg'
+import RComets from './../../assets/Landing/CometsRight.svg'
+import HexLogo from './../../assets/HexLogo2.svg'
 
 const Container = styled.div`
 	width: 100%;
@@ -87,12 +87,12 @@ const Container = styled.div`
 		margin: 0 0 2.6rem 0;
 		cursor: pointer;
 		outline: none;
-		
+
 		&.primary {
 			background-color: #0582CA;
 			color: white;
 		}
-		
+
 		&.secondary {
 			background-color: transparent;
 			color: #0582CA;
@@ -106,7 +106,7 @@ export default class Landing extends Component {
 		super(props)
 
 		this.state = {
-			overlay: false
+			overlay: false,
 		}
 
 		this.toggleAbout = this.toggleAbout.bind(this)
@@ -114,7 +114,7 @@ export default class Landing extends Component {
 
 	toggleAbout = () => {
 		this.setState({
-			overlay: !this.state.overlay
+			overlay: !this.state.overlay,
 		})
 	}
 
@@ -129,7 +129,7 @@ export default class Landing extends Component {
 						<h1>YVIDEO</h1>
 					</div>
 					<div className='button-wrapper'>
-						<Button as={Link} to={'/dashboard'} className='primary'>Sign In</Button>
+						<Button as={Link} to={`/dashboard`} className='primary'>Sign In</Button>
 						<Button className='secondary' onClick={this.toggleAbout}>About</Button>
 					</div>
 				</Welcome>
@@ -137,7 +137,7 @@ export default class Landing extends Component {
 					this.state.overlay ?
 						<Overlay toggleAbout={this.toggleAbout} />
 						:
-						''
+						``
 				}
 			</Container>
 		)

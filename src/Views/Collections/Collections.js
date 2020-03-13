@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom'
 import ListCollection from './List/ListCollection'
 import BlockCollection from './Block/BlockCollection'
 
-import blockView from './../../Assets/Collections/block-view.svg'
-import listView from './../../Assets/Collections/list-view.svg'
+import blockView from './../../assets/Collections/block-view.svg'
+import listView from './../../assets/Collections/list-view.svg'
 
 const Container = styled.div`
 		max-width: 100rem;
@@ -39,7 +39,7 @@ const Container = styled.div`
 				}
 
 				& > button {
-					
+
 				}
 			}
 
@@ -63,26 +63,26 @@ export class Collections extends Component {
 		super(props)
 
 		this.state = {
-			previewEndpoint: process.env.REACT_APP_YVIDEO_SERVER + '/api/user/preview/4',
+			previewEndpoint: `${process.env.REACT_APP_YVIDEO_SERVER}/api/user/preview/4`,
 			preview: [],
 			recent: [],
-			block: false
+			block: false,
 		}
 
 		this.toggleBlock = this.toggleBlock.bind(this)
 		this.getTestData = this.getTestData.bind(this)
 	}
 
-	getTestData(url = '', data = { preview: _CollectionPreview }) {
+	getTestData(url = ``, data = { preview: _CollectionPreview }) {
 		return new Promise((resolve, reject) => {
 			if (data !== {}) return resolve(data)
-			else return reject('YOU LOSE!')
+			else return reject(`YOU LOSE!`)
 		})
 	}
 
 	toggleBlock() {
 		this.setState({
-			block: !this.state.block
+			block: !this.state.block,
 		})
 	}
 
@@ -91,11 +91,11 @@ export class Collections extends Component {
 			.then(response => this.setState({ preview: response.preview }))
 			.catch(error => console.error(error))
 
-		if (Cookies.get('block') !== 'true' || 'false')
-			Cookies.set('block', this.state.block)
+		if (Cookies.get(`block`) !== `true` || `false`)
+			Cookies.set(`block`, this.state.block)
 
 		this.setState({
-			block: Cookies.get('block')
+			block: Cookies.get(`block`),
 		})
 	}
 
@@ -110,7 +110,7 @@ export class Collections extends Component {
 					<div>
 						{
 							(isProf || isAdmin) &&
-							<Link to={'/collection-manager'} >Manage Collections</Link>
+							<Link to={`/collection-manager`} >Manage Collections</Link>
 						}
 						<ViewToggle block={this.state.block} onClick={this.toggleBlock} />
 					</div>
@@ -133,26 +133,26 @@ export default Collections
 const _CollectionPreview = [
 	{
 		'count': 4,
-		'name': 'American Heritage',
-		'url': 'https://s3-alpha.figma.com/img/8cab/3ce4/012ce704e985c8ceef98d0c81e9c3f00',
-		'id': 16
+		'name': `American Heritage`,
+		'url': `https://s3-alpha.figma.com/img/8cab/3ce4/012ce704e985c8ceef98d0c81e9c3f00`,
+		'id': 16,
 	},
 	{
 		'count': 4,
-		'name': 'Germ 101 - Term Videos',
-		'url': 'https://s3-alpha.figma.com/img/77cd/6ec1/8f49d9585034111bbc6453e50c9e6997',
-		'id': 8
+		'name': `Germ 101 - Term Videos`,
+		'url': `https://s3-alpha.figma.com/img/77cd/6ec1/8f49d9585034111bbc6453e50c9e6997`,
+		'id': 8,
 	},
 	{
 		'count': 4,
-		'name': 'MTV Music Videos',
-		'url': 'https://s3-alpha.figma.com/img/41e0/198a/adf1e2025f5bdd1213b5748b79953e9b',
-		'id': 17
+		'name': `MTV Music Videos`,
+		'url': `https://s3-alpha.figma.com/img/41e0/198a/adf1e2025f5bdd1213b5748b79953e9b`,
+		'id': 17,
 	},
 	{
 		'count': 4,
-		'name': 'Yoga Meditation',
-		'url': 'https://s3-alpha.figma.com/img/fc1c/6b87/272178796ef6b666b6befb1723d495d8',
-		'id': 20
-	}
+		'name': `Yoga Meditation`,
+		'url': `https://s3-alpha.figma.com/img/fc1c/6b87/272178796ef6b666b6befb1723d495d8`,
+		'id': 20,
+	},
 ]

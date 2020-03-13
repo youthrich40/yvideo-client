@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { Link } from 'react-router-dom'
 
-import HexLogo from './../../Assets/HexLogo2.svg'
+import HexLogo from './../../assets/HexLogo2.svg'
 
 const Container = styled(Link)`
 	display: flex;

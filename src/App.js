@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom'
 import './Styles/global.css'
 // import Global from './Styles/Global'
 
-import PrivateRoute from './Components/Routes/PrivateRoute'
+import PrivateRoute from './components/Routes/PrivateRoute'
 
 import Landing from './Views/Landing/Landing'
 import Home from './Views/Home/Home'
@@ -23,7 +23,7 @@ export default class App extends Component {
 			auth: false,
 			check: true,
 			isProf: false,
-			isAdmin: false
+			isAdmin: false,
 		}
 
 		this.toggleMenu = this.toggleMenu.bind(this)
@@ -33,7 +33,7 @@ export default class App extends Component {
 
 	toggleMenu = () => {
 		this.setState({
-			active: !this.state.active
+			active: !this.state.active,
 		})
 	}
 
@@ -42,21 +42,21 @@ export default class App extends Component {
 	}
 
 	checkAuth() {
-		fetch(process.env.REACT_APP_YVIDEO_SERVER + '/api/user/auth', { credentials: 'include' })
+		fetch(`${process.env.REACT_APP_YVIDEO_SERVER}/api/user/auth`, { credentials: `include` })
 			.then(data => {
-				console.log('You\'re logged in via CAS.')
+				console.log(`You're logged in via CAS.`)
 				// console.log('/api/user/auth', data)
 				if (data.ok) {
-					Cookies.set('auth', true)
+					Cookies.set(`auth`, true)
 					this.setState({
 						auth: true,
-						check: false
+						check: false,
 					})
 				} else {
-					Cookies.set('auth', false)
+					Cookies.set(`auth`, false)
 					this.setState({
 						auth: false,
-						check: false
+						check: false,
 					})
 				}
 			})
@@ -67,15 +67,15 @@ export default class App extends Component {
 
 	signOut = () => {
 		this.setState({ wait: true })
-		fetch(process.env.REACT_APP_YVIDEO_SERVER + '/auth/logout', { credentials: 'include' })
+		fetch(`${process.env.REACT_APP_YVIDEO_SERVER}/auth/logout`, { credentials: `include` })
 			.then(data => {
 				console.log(data)
-				Cookies.set('auth', false)
+				Cookies.set(`auth`, false)
 				this.setState({
 					auth: false,
-					wait: false
+					wait: false,
 				})
-				window.location.href = '/'
+				window.location.href = `/`
 			})
 	}
 
@@ -87,7 +87,7 @@ export default class App extends Component {
 			toggleMenu: this.toggleMenu,
 			signOut: this.signOut,
 			isProf: this.state.isProf,
-			isAdmin: this.state.isAdmin
+			isAdmin: this.state.isAdmin,
 		}
 
 		return (
@@ -97,7 +97,7 @@ export default class App extends Component {
 				<PrivateRoute path='/dashboard' component={Home} stateVars={stateVars} />
 				<PrivateRoute path='/collections' component={Collections} stateVars={stateVars} />
 
-				<Route render={() => <Error error='404' message={'You\'ve wandered too far'} />} />
+				<Route render={() => <Error error='404' message={`You've wandered too far`} />} />
 				{/* <Global /> */}
 			</Switch>
 		)
