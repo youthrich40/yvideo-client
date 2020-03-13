@@ -10,11 +10,12 @@ import {
 import { LazyImage } from 'components/bits'
 
 import Style, {
-	Preview,
-	TitleEdit,
-	Icon,
-	PublishButton,
 	EditButton,
+	Icon,
+	Preview,
+	PublishButton,
+	RemoveButton,
+	TitleEdit,
 } from './styles'
 
 class ContentOverview extends PureComponent {
@@ -23,12 +24,16 @@ class ContentOverview extends PureComponent {
 		const {
 			editing,
 			content,
+			showing,
 		} = this.props.viewstate
 
 		const {
 			handleNameChange,
+			handleRemoveContent,
 			handleToggleEdit,
 			handleTogglePublish,
+			setContentState,
+			setShowing,
 		} = this.props.handlers
 
 		const {
@@ -36,6 +41,11 @@ class ContentOverview extends PureComponent {
 			showCaptions,
 			showAnnotations,
 		} = content.settings
+
+		const handlers = {
+			setContentState,
+			setShowing,
+		}
 
 		return (
 			<Style>
@@ -54,7 +64,10 @@ class ContentOverview extends PureComponent {
 							<Icon className='annotations' checked={showAnnotations} />
 						</ul>
 						{editing ?
-							<PublishButton published={content.published} onClick={handleTogglePublish}>{content.published ? `Unpublish` : `Publish`}</PublishButton>
+							<div>
+								<PublishButton published={content.published} onClick={handleTogglePublish}>{content.published ? `Unpublish` : `Publish`}</PublishButton>
+								<RemoveButton onClick={handleRemoveContent}>Delete</RemoveButton>
+							</div>
 							:
 							<em>{content.published ? `Published` : `Unpublished`}</em>
 						}
@@ -64,7 +77,7 @@ class ContentOverview extends PureComponent {
 					</div>
 				</Preview>
 				{editing &&
-					<ContentSettingsContainer handlers={this.handlers} content={content} editing={editing} />
+					<ContentSettingsContainer content={content} showing={showing} handlers={handlers} />
 				}
 			</Style>
 		)

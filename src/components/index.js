@@ -1,8 +1,11 @@
-import CaptionAider from './c/CaptionAider'
+import Admin from './c/Admin'
+import CollectionPermissions from './c/CollectionPermissions'
 import Collections from './c/Collections'
 import ContentOverview from './c/ContentOverview'
+import ContentSettings from './c/ContentSettings'
 import Error from './c/Error'
 import Header from './c/Header'
+import LabAssistant from './c/LabAssistant'
 import Landing from './c/Landing'
 import Load from './c/Load'
 import ManageCollection from './c/ManageCollection'
@@ -13,11 +16,14 @@ import Player from './c/Player'
 import Root from './c/Root'
 
 export {
-	CaptionAider,
+	Admin,
+	CollectionPermissions,
 	Collections,
 	ContentOverview,
+	ContentSettings,
 	Error,
 	Header,
+	LabAssistant,
 	Landing,
 	Load,
 	ManageCollection,
