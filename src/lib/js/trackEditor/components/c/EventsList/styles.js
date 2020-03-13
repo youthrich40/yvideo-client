@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 const Style = styled.div`
-	background-color: #f1f1f1;
-
 	padding: 20px;
 	height: 100%;
 `

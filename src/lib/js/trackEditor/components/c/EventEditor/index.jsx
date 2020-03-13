@@ -20,6 +20,7 @@ class EventEditor extends PureComponent {
 		} = this.props.viewstate
 
 		const {
+			handleTextChange,
 			toggleEventsTab,
 			toggleSaveTab,
 			saveTracks,
@@ -35,11 +36,11 @@ class EventEditor extends PureComponent {
 				<Line />
 
 				{ !saveTabActive &&
-					<EventsTitle>Events</EventsTitle>
+					<EventsTitle>Events{event ? ` --> ` : ``}{event ? event.type : ``}</EventsTitle>
 				}
 
 				{ !saveTabActive &&
-					(event ? <EventEditArea viewstate={{event}} /> : <EventsList eventTypes={eventTypes} />)
+					(event ? <EventEditArea viewstate={{event}} handlers={{handleTextChange}}/> : <EventsList eventTypes={eventTypes} />)
 				}
 
 				{ saveTabActive &&

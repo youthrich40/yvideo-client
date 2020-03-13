@@ -3,6 +3,7 @@ import styled from 'styled-components'
 const Style = styled.div`
 	height: calc(100vh - 8.4rem);
 	width: 100%;
+	background-color: #F1F1F1;
 
 	font-family: 'Rambla',sans-serif;
 
